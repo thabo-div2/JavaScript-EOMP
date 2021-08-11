@@ -13,7 +13,8 @@ function getProducts(url) {
 			products.forEach((btn) => {
 				container.innerHTML = `
                     <div class="product-container">
-                        <p>${btn}</p>
+                        <h3>${btn[1]}</h3>
+                        <p>${btn[2]}</p>
                     </div>
                 `;
 			});
