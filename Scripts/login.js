@@ -29,6 +29,7 @@ function login(url) {
 function submitForm(event) {
 	event.preventDefault();
 	login(baseURL);
+	window.location.href = "/products.html";
 }
 
 form.addEventListener("submit", submitForm);
