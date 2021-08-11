@@ -15,5 +15,15 @@ body {
 	flex-direction: column;
 	border: 1px solid #222;
 	background-color: #666665;
-	width: 100%;
+}
+
+#form {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.user-btn {
+	padding: 10px;
+	border-radius: 10%;
 }
