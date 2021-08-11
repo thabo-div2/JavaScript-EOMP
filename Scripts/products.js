@@ -14,7 +14,9 @@ function getProducts(url) {
 				container.innerHTML = `
                     <div class="product-container">
                         <h3>${btn[1]}</h3>
-                        <p>${btn[2]}</p>
+                        <p>R${btn[2]}</p>
+                        <p>Description: <q>${btn[3]}</q></p>
+                        <p>Type: ${btn[4]}</p>
                     </div>
                 `;
 			});
