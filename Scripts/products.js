@@ -10,13 +10,13 @@ function getProducts(url) {
 			let products = data.data;
 			let container = document.querySelector(".products");
 			container.innerHTML = "";
-			products.forEach((btn) => {
+			products.forEach((product) => {
 				container.innerHTML = `
                     <div class="product-container">
-                        <h3>${btn[1]}</h3>
-                        <p>R${btn[2]}</p>
-                        <p>Description: <q>${btn[3]}</q></p>
-                        <p>Type: ${btn[4]}</p>
+                        <h3>${product[1]}</h3>
+                        <p>R${product[2]}</p>
+                        <p>Description: <q>${product[3]}</q></p>
+                        <p>Type: ${product[4]}</p>
                     </div>
                 `;
 			});
