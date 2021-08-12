@@ -1,5 +1,5 @@
 let baseURL = "https://floating-sands-20442.herokuapp.com/auth";
-let accesstoken = window.localStorage.getItem("jwt-token");
+const accesstoken = window.localStorage.getItem("jwt-token");
 
 const form = document.querySelector("#form");
 
@@ -33,3 +33,28 @@ function submitForm(event) {
 }
 
 form.addEventListener("submit", submitForm);
+
+function createProducts() {
+	const pname = document.querySelector("#name");
+	const price = document.querySelector("#price");
+	const desc = document.querySelector("#description");
+	const type = document.querySelector("#type");
+	const body = {
+		name: pname,
+		price: price,
+		description: desc,
+		type: type,
+	};
+	fetch("https://floating-sands-20442.herokuapp.com/create-products", {
+		method: "POST",
+		body: JSON.stringify(body),
+		headers: {
+			"Content-type": "application/json; charset=UTF-8",
+			Authorization: `jwt ${window.localStorage.getItem("jwt-token")}`,
+		},
+	})
+		.then((res) => res.json())
+		.then((json) => {
+			console.log(json);
+		});
+}
