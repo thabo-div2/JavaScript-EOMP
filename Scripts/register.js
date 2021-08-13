@@ -1,7 +1,7 @@
 // // fetching my api
 // const baseURL = "https://pacific-shelf-48886.herokuapp.com/user-registration/";
 
-// const form = document.querySelector("#form");
+const form = document.querySelector("#form");
 // const log = document.getElementById("log");
 
 // function userRegistration(url) {
@@ -31,10 +31,9 @@
 // 		.then((json) => console.log(json));
 // }
 
-// function submitForm(event) {
-// 	log.textContent = "You have successfully logged ";
-// 	event.preventDefault();
-// 	userRegistration(baseURL);
-// }
+function submitForm(event) {
+    event.preventDefault();
+    window.location.href = "./login.html"
+}
 
-// form.addEventListener("submit", submitForm);
+form.addEventListener("submit", submitForm);
