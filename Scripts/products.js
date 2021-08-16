@@ -18,6 +18,7 @@ function getProducts(url) {
                         <p>R${product[2]}</p>
                         <p>Description: <q>${product[3]}</q></p>
                         <p>Type: ${product[4]}</p>
+						<button id="deleteProduct">Delete Product<button>
 						<button id="myBtn">Update Product</button>
 
 						<div id="myModal" class="modal">
@@ -25,11 +26,17 @@ function getProducts(url) {
 								<span class="close">&times;</span>
 								<form action="https://floating-sands-20442.herokuapp.com/edit-products/${product[0]}" method="PUT" id="update-form">
 									<div>
-										<label for="name">Name</label>
-										<input type="text" id="name" name="name" />
+										<label for="price">Price</label>
+										<input type="text" id="price" name="price" />
 									</div>
+									<div>
+										<label for="quantity">Quantity</label>
+										<input type="number" id="quantity" name="quantity"/>
+									</div>
+									<button type="submit">Update</button>
 								</form>
 							</div>
+
 
 						</div>
                     </div>
@@ -42,6 +49,8 @@ function getProducts(url) {
 
 			// Get the <span> element that closes the modal
 			let span = document.getElementsByClassName("close")[0];
+
+			let del = document.getElementById("deleteProduct")
 
 			// When the user clicks on the button, open the modal
 			btn.onclick = function() {
@@ -58,6 +67,12 @@ function getProducts(url) {
 			if (event.target == modal) {
 				modal.style.display = "none";
 			}
+			}
+
+			del.onclick = function () {
+				fetch("https://floating-sands-20442.herokuapp.com/delete-products/")
+					.then(res => res.json())
+					.then(data => data)
 			}
 		});
 }
