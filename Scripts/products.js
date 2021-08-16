@@ -23,9 +23,11 @@ function getProducts(url) {
 						<div id="myModal" class="modal">
 							<div class="modal-content">
 								<span class="close">&times;</span>
-								<form action="https://floating-sands-20442.herokuapp.com/edit-products" method="PUT" id="update-form">
-									<label></label>
-									<input />
+								<form action="https://floating-sands-20442.herokuapp.com/edit-products/${product[0]}" method="PUT" id="update-form">
+									<div>
+										<label for="name">Name</label>
+										<input type="text" id="name" name="name" />
+									</div>
 								</form>
 							</div>
 
