@@ -39,3 +39,11 @@
 	text-decoration: none;
 	cursor: pointer;
 }
+
+#cart {
+	display: none;
+}
+
+#cart.active {
+	display: flex;
+}

@@ -16,6 +16,11 @@
 				<li><a href="./add_products.html">Add Products</a></li>
 			</ul>
 		</nav>
+		<nav>
+			<ul>
+				<li><a href="./index.html">Go Back</a></li>
+			</ul>
+		</nav>
 		<!-- Show Products -->
 		<div class="products"></div>
 		<div id="myModal" class="modal">
@@ -27,6 +32,7 @@
 						id="filter"
 						placeholder="Search Items..."
 					/>
+					<button type="submit" onclick="searchForProducts()">Search</button>
 				</div>
 				<span onclick="editProduct('myModal')" class="close">&times;</span>
 				<form
@@ -36,7 +42,7 @@
 				>
 					<div>
 						<label for="price">Price</label>
-						<input type="text" id="price" name="price" />
+						<input type="number" id="price" name="price" />
 					</div>
 					<div>
 						<label for="quantity">Quantity</label>
@@ -46,9 +52,12 @@
 				</form>
 			</div>
 		</div>
+		<div id="cart"></div>
 		<button onclick="editProduct('myModal')" class="myBtn">
 			Update Products
 		</button>
+		<button onclick="showCart()" class="cart-btn">Show Cart</button>
+		<button onclick="toggleModel()">Delete Product</button>
 		<!-- My Scripts -->
 		<script src="./Scripts/products.js"></script>
 	</body>

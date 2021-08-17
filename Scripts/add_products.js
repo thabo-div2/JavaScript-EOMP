@@ -44,6 +44,7 @@ const add = document.querySelector("#add-form");
 function addProduct(event) {
 	event.preventDefault();
 	// createProducts(baseURL);
+	window.location.href = "./products.html";
 }
 
 add.addEventListener("submit", addProduct);

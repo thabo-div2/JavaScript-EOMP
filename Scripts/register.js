@@ -32,8 +32,8 @@ const form = document.querySelector("#form");
 // }
 
 function submitForm(event) {
-    event.preventDefault();
-    window.location.href = "./login.html"
+	event.preventDefault();
+	window.location.href = "./login.html";
 }
 
 form.addEventListener("submit", submitForm);
