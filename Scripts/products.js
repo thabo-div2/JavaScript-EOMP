@@ -83,17 +83,40 @@ function showCart() {
 	document.getElementById("cart").classList.toggle("active");
 	let container = document.querySelector("#cart");
 	container.innerHTML = "";
+	console.log(cart);
 	cart.forEach((item) => {
+		console.log(item);
 		container.innerHTML += `
 		<div class="carts">
-			<h3>Name: ${item[1]}</h3>
-			<p>Price: R${item[2]}</p>
-			<p>Description: <q>${item[3]}</q></p>
-			<p>Type: ${item[4]}</p>
-			<p>Quantity: ${item[5]}</p>
+			<span onclick="showCart()" class="close">&times;</span>
+			<div>
+				<h3>Name: ${item[1]}</h3>
+				<p>Price: R${item[2]}</p>
+				<p>Description: <q>${item[3]}</q></p>
+				<p>Type: ${item[4]}</p>
+				<p>Quantity: ${item[5]}</p>
+			</div>
 		</div>
 		`;
 	});
 }
 
-function toggleModel() {}
+function toggleModel() {
+	document.querySelector(".delete-product").classList.toggle("active");
+}
+
+function deleteProd() {
+	let id = document.querySelector("#delete-filter").value;
+
+	fetch(`https://floating-sands-20442.herokuapp.com/delete-products/${id}`, {
+		method: "GET",
+		headers: {
+			"Content-Type": "application/json",
+		},
+	})
+		.then((res) => res.json())
+		.then((res) => {
+			console.log(res);
+			window.location.reload();
+		});
+}

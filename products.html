@@ -27,12 +27,13 @@
 			<div class="modal-content">
 				<div>
 					<input
-						type="text"
+						type="number"
 						class="form-control"
 						id="filter"
 						placeholder="Search Items..."
+						required
 					/>
-					<button type="submit" onclick="searchForProducts()">Search</button>
+					<!-- <button type="submit" onclick="searchForProducts()">Search</button> -->
 				</div>
 				<span onclick="editProduct('myModal')" class="close">&times;</span>
 				<form
@@ -48,11 +49,21 @@
 						<label for="quantity">Quantity</label>
 						<input type="number" id="quantity" name="quantity" />
 					</div>
-					<button type="submit">Update</button>
+					<button type="submit" onclick="editFruits()">Update</button>
 				</form>
 			</div>
 		</div>
-		<div id="cart"></div>
+		<div id="cart">
+			<span onclick="showCart()" class="close">&times;</span>
+			<div id="cart-container"></div>
+		</div>
+		<div class="delete-product">
+			<div class="delete-container">
+				<span onclick="toggleModel()" class="close">&times;</span>
+				<input type="number" id="delete-filter" required />
+				<button type="submit" onclick="deleteProd()">Delete Product</button>
+			</div>
+		</div>
 		<button onclick="editProduct('myModal')" class="myBtn">
 			Update Products
 		</button>
