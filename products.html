@@ -22,6 +22,8 @@
 			</ul>
 		</nav>
 		<!-- Show Products -->
+		<input type="text" id="filter" placeholder="Search Items..." required />
+		<button type="submit" onclick="searchForProducts()">Search</button>
 		<div class="products"></div>
 		<div id="myModal" class="modal">
 			<div class="modal-content">
@@ -29,7 +31,7 @@
 					<input
 						type="number"
 						class="form-control"
-						id="filter"
+						id="edit-filter"
 						placeholder="Search Items..."
 						required
 					/>

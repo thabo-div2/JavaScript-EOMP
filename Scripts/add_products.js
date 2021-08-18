@@ -1,6 +1,6 @@
-const baseURL = "https://floating-sands-20442.herokuapp.com/create-products";
-const accesstoken = window.localStorage.getItem("jwt-token");
-const storage = window.localStorage;
+// const baseURL = "https://floating-sands-20442.herokuapp.com/create-products";
+// const accesstoken = window.localStorage.getItem("jwt-token");
+// const storage = window.localStorage;
 
 const add = document.querySelector("#add-form");
 
